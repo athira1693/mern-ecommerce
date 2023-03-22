@@ -16,6 +16,16 @@ const RegisterPage = () => {
     setValidated(true);
   };
 
+  const onChange=()=>{
+    const password = document.querySelector("input[name=password]")
+    const confirm = document.querySelector("input[name=confirmPassword]")
+    if(confirm.value===password.value){
+      confirm.setCustomValidity("")
+    } else {
+      confirm.setCustomValidity("Passwords do not match")
+    }
+  }
+
   return (
     <Container>
       <Row className='mt-5 justify-content-md-center'>
@@ -61,6 +71,8 @@ const RegisterPage = () => {
               placeholder="Password"
               name='password'
               minLength={6}
+              onChange={onChange}
+
             />
             <Form.Control.Feedback type="invalid">Please enter a valid password</Form.Control.Feedback>
             <Form.Text className='text-muted'>
@@ -75,6 +87,7 @@ const RegisterPage = () => {
               placeholder="Repeat Password"
               name='confirmPassword'
               minLength={6}
+              onChange={onChange}
             />
             <Form.Control.Feedback type="invalid">Both passwords should match</Form.Control.Feedback>
           </Form.Group>
