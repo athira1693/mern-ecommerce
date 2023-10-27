@@ -27,10 +27,10 @@ import ScrollToTop from './utils/scrollToTop';
 function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop/>
+      <ScrollToTop />
       <HeaderComponent />
       <Routes>
-        <Route  element={<RoutesWithUserChatComponent />}>
+        <Route element={<RoutesWithUserChatComponent />}>
           <Route path='/' element={<HomePage />} />
           <Route path='/product-list' element={<ProductListPage />} />
           <Route path='/product-details' element={<ProductDetailsPage />} />
@@ -39,20 +39,16 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
           <Route path='*' element='Page does not exist 404' />
-          </Route>
-
-          <Route element={<ProtectedRoutesComponent admin={false} />}>
-            <Route path='/user' element={<UserProfilePage />} />
-            <Route path='/user/my-orders' element={<UserOrdersPage />} />
-            <Route
-              path='/user/cart-details'
-              element={<UserCartDetailsPage />}
-            />
-            <Route
-              path='/user/order-details'
-              element={<UserOrderDetailsPage />}
-            />
-          </Route>
+        </Route>
+        <Route element={<ProtectedRoutesComponent admin={false} />}>
+          <Route path='/user' element={<UserProfilePage />} />
+          <Route path='/user/my-orders' element={<UserOrdersPage />} />
+          <Route path='/user/cart-details' element={<UserCartDetailsPage />} />
+          <Route
+            path='/user/order-details'
+            element={<UserOrderDetailsPage />}
+          />
+        </Route>
         //admin
         <Route element={<ProtectedRoutesComponent admin={true} />}>
           <Route path='/admin/users' element={<AdminUsersPage />} />

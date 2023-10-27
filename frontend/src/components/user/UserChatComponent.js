@@ -5,7 +5,7 @@ const UserChatComponent = () => {
   return (
     <>
       <input type='checkbox' id="check" />
-      <label className='chat-btn' for="check">
+      <label className='chat-btn' htmlFor="check">
         <i className="bi bi-chat-dots comment"></i>
         <span className='position-absolute top-0 start-10 translate-middle p-2 bg-danger border border-light rounded-circle'>
         </span>

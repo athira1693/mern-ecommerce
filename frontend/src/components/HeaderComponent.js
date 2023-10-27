@@ -64,7 +64,7 @@ const HeaderComponent = () => {
             </LinkContainer>
             <LinkContainer to='/cart'>
               <Nav.Link><Badge pill bg='danger'>1</Badge>
-                <i class="bi bi-cart-dash"></i>
+                <i className="bi bi-cart-dash"></i>
                <span className='ms-1'> CART</span>
               </Nav.Link>
             </LinkContainer>
